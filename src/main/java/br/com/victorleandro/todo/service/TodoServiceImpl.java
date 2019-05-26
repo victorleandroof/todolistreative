@@ -26,7 +26,7 @@ public class TodoServiceImpl implements  TodoService{
 
     @Override
     public Flux<Todo> findAll() {
-        return repository.findAll().sort(Comparator.comparing(Todo::getDeadline));
+        return repository.findAll();
     }
 
     @Override
