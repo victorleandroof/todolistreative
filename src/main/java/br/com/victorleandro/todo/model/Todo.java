@@ -11,6 +11,7 @@ import org.springframework.data.mongodb.core.mapping.Field;
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.Size;
 import java.io.Serializable;
+import java.time.LocalDate;
 import java.time.LocalDateTime;
 
 @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -32,13 +33,13 @@ public class Todo implements Serializable {
     @Size(max = 100,min = 8)
     private String title;
     @Field("description")
-    @JsonProperty(" ")
+    @JsonProperty("description")
     @NotBlank
     @Size(max = 255,min = 8)
     private String description;
     @Field("deadline")
     @JsonProperty("deadline")
-    private LocalDateTime deadline;
+    private LocalDate deadline;
     @Field("startDate")
     @JsonProperty("start_date")
     private LocalDateTime startDate;
